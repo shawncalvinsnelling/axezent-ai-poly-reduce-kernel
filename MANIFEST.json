@@ -1,0 +1,52 @@
+{
+  "donations": {
+    "cash_app": "$Axezent"
+  },
+  "files": [
+    ".github/FUNDING.yml",
+    ".github/workflows/main.yml",
+    "CITATION.cff",
+    "CLAIM_BOUNDARY.md",
+    "CODE_OF_CONDUCT.md",
+    "COMMERCIAL.md",
+    "CONTRIBUTING.md",
+    "Cargo.toml",
+    "DONATIONS.md",
+    "ENTERPRISE.md",
+    "GITHUB_FUNDING.yml",
+    "GITHUB_WORKFLOW_MAIN.yml",
+    "LICENSE",
+    "NOTICE",
+    "README.md",
+    "RECEIPT_SPEC.md",
+    "REDUCTION_SPEC.md",
+    "RELEASE.md",
+    "SECURITY.md",
+    "TESTED_STATUS.md",
+    "THREAT_MODEL.md",
+    "UPLOAD_CHECKLIST.md",
+    "audit_sources.py",
+    "axezent_ai_prk_receipt_v1.schema.json",
+    "failing_bad_assignment_receipt.json",
+    "failing_bad_edge_receipt.json",
+    "failing_bad_k_receipt.json",
+    "lib.rs",
+    "main.rs",
+    "passing_3sat_to_clique_receipt.json",
+    "prk_checker.py",
+    "pyproject.toml",
+    "test_checker.py"
+  ],
+  "launch_reduction": "3SAT_TO_CLIQUE",
+  "project": "Axezent AI Poly-Reduce Kernel",
+  "repository": "axezent-ai-poly-reduce-kernel",
+  "tested": {
+    "cargo_local": "NOT_RUN_IN_SANDBOX_CARGO_UNAVAILABLE",
+    "pytest": "PASS",
+    "python_failing_receipts": "PASS",
+    "python_passing_receipt": "PASS",
+    "source_audit": "PASS"
+  },
+  "truth_boundary": "finite reduction-receipt checker; no global complexity claim",
+  "version": "1.0.0"
+}

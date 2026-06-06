@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+title: Axezent AI Poly-Reduce Kernel
+message: If you use this software, please cite it using the metadata from this file.
+type: software
+authors:
+  - family-names: Snelling
+    given-names: Shawn Calvin
+repository-code: https://github.com/shawncalvinsnelling/axezent-ai-poly-reduce-kernel
+license: MIT
+version: 1.0.0

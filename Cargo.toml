@@ -1,0 +1,14 @@
+[package]
+name = "axezent-prk-runtime"
+version = "1.0.0"
+edition = "2021"
+description = "Axezent AI Poly-Reduce Kernel streaming runtime scaffold"
+license = "MIT"
+
+[lib]
+name = "axezent_prk_runtime"
+path = "lib.rs"
+
+[[bin]]
+name = "axezent-prk-runtime"
+path = "main.rs"

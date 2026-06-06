@@ -1,0 +1,122 @@
+{
+  "$id": "https://axezent.ai/schemas/axezent_ai_prk_receipt_v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "constructed_instance": {
+      "additionalProperties": true,
+      "properties": {
+        "edges": {
+          "items": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 2,
+            "minItems": 2,
+            "type": "array"
+          },
+          "type": "array"
+        },
+        "k": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "nodes": {
+          "items": {
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "type": {
+          "const": "CLIQUE"
+        }
+      },
+      "required": [
+        "type",
+        "k",
+        "nodes",
+        "edges"
+      ],
+      "type": "object"
+    },
+    "formula": {
+      "additionalProperties": true,
+      "properties": {
+        "clauses": {
+          "items": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 3,
+            "minItems": 3,
+            "type": "array"
+          },
+          "type": "array"
+        },
+        "variables": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "variables",
+        "clauses"
+      ],
+      "type": "object"
+    },
+    "reduction": {
+      "additionalProperties": true,
+      "properties": {
+        "name": {
+          "const": "3SAT_TO_CLIQUE"
+        },
+        "version": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "version"
+      ],
+      "type": "object"
+    },
+    "schema": {
+      "const": "AXEZENT-AI-PRK-RECEIPT-v1"
+    },
+    "truth_label": {
+      "const": "FINITE_REDUCTION_RECEIPT_CHECK"
+    },
+    "witness": {
+      "additionalProperties": true,
+      "properties": {
+        "assignment": {
+          "type": "object"
+        },
+        "clique": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "assignment",
+        "clique"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema",
+    "truth_label",
+    "reduction",
+    "formula",
+    "constructed_instance",
+    "witness"
+  ],
+  "title": "Axezent AI PRK Receipt v1",
+  "type": "object"
+}

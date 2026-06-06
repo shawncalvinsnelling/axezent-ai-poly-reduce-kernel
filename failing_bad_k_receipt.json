@@ -1,0 +1,211 @@
+{
+  "checker_expectation": {
+    "expected_result": "REJECT"
+  },
+  "claim_boundary": {
+    "does_claim": [
+      "finite 3SAT-to-CLIQUE receipt checked",
+      "constructed graph matches the textbook local rule",
+      "witness clique matches the submitted satisfying assignment"
+    ],
+    "does_not_claim": [
+      "resolution of P vs NP",
+      "global solver correctness",
+      "optimality of all reductions",
+      "universal automation of complexity theory"
+    ]
+  },
+  "constructed_instance": {
+    "edges": [
+      [
+        "c1_l1",
+        "c2_l2"
+      ],
+      [
+        "c1_l1",
+        "c2_l3"
+      ],
+      [
+        "c1_l1",
+        "c3_l1"
+      ],
+      [
+        "c1_l1",
+        "c3_l2"
+      ],
+      [
+        "c1_l1",
+        "c3_l3"
+      ],
+      [
+        "c1_l2",
+        "c2_l1"
+      ],
+      [
+        "c1_l2",
+        "c2_l2"
+      ],
+      [
+        "c1_l2",
+        "c2_l3"
+      ],
+      [
+        "c1_l2",
+        "c3_l1"
+      ],
+      [
+        "c1_l2",
+        "c3_l3"
+      ],
+      [
+        "c1_l3",
+        "c2_l1"
+      ],
+      [
+        "c1_l3",
+        "c2_l2"
+      ],
+      [
+        "c1_l3",
+        "c2_l3"
+      ],
+      [
+        "c1_l3",
+        "c3_l1"
+      ],
+      [
+        "c1_l3",
+        "c3_l2"
+      ],
+      [
+        "c1_l3",
+        "c3_l3"
+      ],
+      [
+        "c2_l1",
+        "c3_l2"
+      ],
+      [
+        "c2_l1",
+        "c3_l3"
+      ],
+      [
+        "c2_l2",
+        "c3_l1"
+      ],
+      [
+        "c2_l2",
+        "c3_l3"
+      ],
+      [
+        "c2_l3",
+        "c3_l1"
+      ],
+      [
+        "c2_l3",
+        "c3_l2"
+      ],
+      [
+        "c2_l3",
+        "c3_l3"
+      ]
+    ],
+    "k": 2,
+    "nodes": [
+      {
+        "clause_index": 1,
+        "id": "c1_l1",
+        "literal": "x1"
+      },
+      {
+        "clause_index": 1,
+        "id": "c1_l2",
+        "literal": "x2"
+      },
+      {
+        "clause_index": 1,
+        "id": "c1_l3",
+        "literal": "x3"
+      },
+      {
+        "clause_index": 2,
+        "id": "c2_l1",
+        "literal": "!x1"
+      },
+      {
+        "clause_index": 2,
+        "id": "c2_l2",
+        "literal": "x2"
+      },
+      {
+        "clause_index": 2,
+        "id": "c2_l3",
+        "literal": "x3"
+      },
+      {
+        "clause_index": 3,
+        "id": "c3_l1",
+        "literal": "x1"
+      },
+      {
+        "clause_index": 3,
+        "id": "c3_l2",
+        "literal": "!x2"
+      },
+      {
+        "clause_index": 3,
+        "id": "c3_l3",
+        "literal": "x3"
+      }
+    ],
+    "type": "CLIQUE"
+  },
+  "formula": {
+    "clauses": [
+      [
+        "x1",
+        "x2",
+        "x3"
+      ],
+      [
+        "!x1",
+        "x2",
+        "x3"
+      ],
+      [
+        "x1",
+        "!x2",
+        "x3"
+      ]
+    ],
+    "variables": [
+      "x1",
+      "x2",
+      "x3"
+    ]
+  },
+  "project": {
+    "name": "Axezent AI Poly-Reduce Kernel",
+    "short_name": "Axezent AI PRK",
+    "version": "1.0.0"
+  },
+  "reduction": {
+    "direction": "finite_instance_receipt",
+    "name": "3SAT_TO_CLIQUE",
+    "version": "1.0.0"
+  },
+  "schema": "AXEZENT-AI-PRK-RECEIPT-v1",
+  "truth_label": "FINITE_REDUCTION_RECEIPT_CHECK",
+  "witness": {
+    "assignment": {
+      "x1": true,
+      "x2": true,
+      "x3": false
+    },
+    "clique": [
+      "c1_l1",
+      "c2_l2",
+      "c3_l1"
+    ]
+  }
+}

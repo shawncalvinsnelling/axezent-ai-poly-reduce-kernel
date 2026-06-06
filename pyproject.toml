@@ -1,0 +1,10 @@
+[project]
+name = "axezent-ai-poly-reduce-kernel"
+version = "1.0.0"
+description = "Finite reduction-receipt checker for classical complexity reductions"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Shawn Calvin Snelling / Axezent AI"}]
+
+[project.scripts]
+axezent-prk = "prk_checker:main"

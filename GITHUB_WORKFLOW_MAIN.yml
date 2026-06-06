@@ -1,0 +1,90 @@
+name: Axezent AI PRK Green CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch: {}
+
+jobs:
+  python:
+    name: Python checker and reduction receipts
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Python test tools
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pytest
+
+      - name: Run passing receipt
+        run: |
+          python prk_checker.py verify passing_3sat_to_clique_receipt.json
+
+      - name: Confirm bad-edge receipt rejects
+        run: |
+          set +e
+          python prk_checker.py verify failing_bad_edge_receipt.json
+          code=$?
+          if [ "$code" -ne 1 ]; then
+            echo "Expected bad-edge receipt to reject with exit code 1, got $code"
+            exit 1
+          fi
+
+      - name: Confirm bad-k receipt rejects
+        run: |
+          set +e
+          python prk_checker.py verify failing_bad_k_receipt.json
+          code=$?
+          if [ "$code" -ne 1 ]; then
+            echo "Expected bad-k receipt to reject with exit code 1, got $code"
+            exit 1
+          fi
+
+      - name: Run Python tests
+        run: |
+          python -m pytest test_checker.py
+
+  rust:
+    name: Rust runtime scaffold
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Run Rust tests
+        run: |
+          cargo test
+
+      - name: Run Rust demo
+        run: |
+          cargo run
+
+  source-audit:
+    name: Source audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Audit sources
+        run: |
+          python audit_sources.py
